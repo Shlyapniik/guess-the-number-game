@@ -55,11 +55,11 @@ class Program
         {
             if (answer > number)
             {
-                answer = ReadInt("Number less. Try again: ");
+                answer = ReadInt("My number is lower. Try again: ");
             }
             else if (answer < number)
             {
-                answer = ReadInt("Number more. Try again: ");
+                answer = ReadInt("My number is higher. Try again: ");
             }
             
         }
@@ -73,6 +73,8 @@ class Program
         int min = 0;
         int max = 100;
         int answer = (min + max) / 2;
+        Console.WriteLine("The number from 0 to 100. Hmm, I will try to guess it.\n"+
+                        "What about this?");
         Console.WriteLine(answer);
 
         string input;
@@ -83,7 +85,7 @@ class Program
                                 "l - less\n"+
                                 "m - more\n"+
                                 "c - correct\n");
-            input = Console.ReadLine();
+            input = Console.ReadLine().Trim().ToLower();
             if (input == "l")
             {
                 max = answer - 1;
